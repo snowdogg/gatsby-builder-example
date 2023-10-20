@@ -1,49 +1,30 @@
-<p align="center">
-  <a href="https://www.gatsbyjs.com/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter">
-    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
-  </a>
-</p>
 <h1 align="center">
-  Gatsby Minimal Starter
+  Using Builder.io with Gatsby
 </h1>
 
-## 🚀 Quick start
+> A demo for integrating [Builder.io](https://www.builder.io) with Gatsby using our GraphQL API and the `@builder.io/gatsby` plugin
 
-1.  **Create a Gatsby site.**
+This demo demonstrates creating dynamic pages in Builder.io on new URLs and generating them with Gatsby, as well
+as rendering specific parts of your site with Builder.io content via GraphQL queries (e.g. for pages, components, etc)
 
-    Use the Gatsby CLI to create a new site, specifying the minimal starter.
+Run this example Gatsby project to see sample builder data, or replace the api key with your own to set up a Builder playground to learn how to integrate with Gatsby.
 
-    ```shell
-    # create a new Gatsby site using the minimal starter
-    npm init gatsby
-    ```
+- [gatsby-config.js](gatsby-config.js) to set your API key
 
-2.  **Start developing.**
+1.  **Sign up for Builder.io**
+    Then replace the demo API key in gatsby-config.js with your public API key, which you can find in [builder.io/account/organization](https://builder.io/account/organization)
 
-    Navigate into your new site’s directory and start it up.
+2.  **Clone this demo.**
+  ``shell
 
-    ```shell
-    cd my-gatsby-site/
-    npm run develop
-    ```
 
-3.  **Open the code and start customizing!**
+  npm i
+  npm run start
+  ``
 
-    Your site is now running at http://localhost:8000!
+3.  **Connect Builder.io to your localhost**
+  Now that you have the development server running on localhost, point the Builder.io entry to it by assigning the preview URL to be `http://localhost:3000`
 
-    Edit `src/pages/index.js` to see your site update in real-time!
+When you deploy this to a live or staging environment, you can change the preview URL for your model globally from [builder.io/models](https://builder.io/models) (see more about models [here](https://builder.io/c/docs/guides/getting-started-with-models) and preview urls [here](https://builder.io/c/docs/guides/preview-url))
 
-4.  **Learn more**
-
-    - [Documentation](https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-    - [Tutorials](https://www.gatsbyjs.com/docs/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-    - [Guides](https://www.gatsbyjs.com/docs/how-to/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-    - [API Reference](https://www.gatsbyjs.com/docs/api-reference/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-    - [Plugin Library](https://www.gatsbyjs.com/plugins?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-    - [Cheat Sheet](https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-## 🚀 Quick start (Netlify)
-
-Deploy this starter with one click on [Netlify](https://app.netlify.com/signup):
-
-[<img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify" />](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-minimal)
+This example create pages dynamically based on the url you add to your entries on [Builder.io](https://www.builder.io), if you want to create a page manually, do not include the model in your `tempaltes` config as above, add a file under the `pages` folder and query all the entries your page needs from Builder.io, for example:
